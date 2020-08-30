@@ -7,7 +7,7 @@
 
 **Velocidad de sprint:** 6 horas
 
-**Hora para reuniones:**
+**Hora disppnibles para reuniones con product owner:**
 
 | Día | Hora |
 | --- | --- |
