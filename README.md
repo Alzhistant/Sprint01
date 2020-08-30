@@ -7,11 +7,12 @@
 
 **Velocidad de sprint:** 6 horas
 
-**Hora para "daily meetings":**
+**Hora para team meetings:**
 
 | Día | Hora inicio | Hora Fin |
 | --- | --- | --- |
-| 
+| Miércoles | 20:00 | 20:40 |
+| Viernes | 20:00 | 20:40 |
 
 **Hora disponibles para reuniones con product owner:**
 
