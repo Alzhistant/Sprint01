@@ -25,5 +25,8 @@
 
 | Integrantes | Dia | Hora inicio | Hora Fin |
 |:---: | :---: | :---: | :---: |
-|Lucciano | Martes | 15:00 | 17:40 |
-|Lucciano | Viernes | 15:00 | 17:40 |
+| Lucciano | Martes | 15:00 | 17:40 |
+| Lucciano | Viernes | 15:00 | 17:40 |
+| Nicolas | Lunes | 20:00 | 22:00 |
+| Nicolas | Miercoles | 21:00 | 23:00 |
+| Nicolas | Viernes | 20:00 | 22:00 |
