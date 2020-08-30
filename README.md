@@ -5,6 +5,10 @@
 
 **Horas teoricas:** 320 horas
 
+**Hora para reuniones:**
 
+|Día|Hora|
+|Martes|10:00 - 11:00|
+|Lunes|17:40 - 18:40| 
 
 
