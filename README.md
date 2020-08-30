@@ -5,6 +5,10 @@
 
 **Horas teoricas:** 320 horas
 
+**Horas Planeadas:** 131 horas
+
+**Colchon:** 189 horas
+
 **Velocidad de sprint:** 8.5 horas
 
 **Hora para team meetings:**
@@ -30,7 +34,7 @@
 | Nicolas | Lunes | 20:00 | 22:00 |
 | Nicolas | Miercoles | 21:00 | 23:00 |
 | Nicolas | Viernes | 20:00 | 22:00 |
-| Dannitt | Lunes - Viernes | 21:00 | 00:00|
+| Dannitt | Lunes - Viernes | 21:00 | 00:00 |
 | Mario | Lunes | 12:00 | 14:00 |
 | Mario | Miercoles | 13:50 | 15:50 |
 
