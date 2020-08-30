@@ -5,7 +5,7 @@
 
 **Horas teoricas:** 320 horas
 
-**Velocidad de sprint:** 6 horas
+**Velocidad de sprint:** 8.5 horas
 
 **Hora para team meetings:**
 
