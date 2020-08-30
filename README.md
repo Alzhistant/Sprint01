@@ -21,4 +21,9 @@
 | Miércoles | 10:00 | 11:00 |
 | Lunes | 17:40 | 18:40 | 
 
+**Horas de trabajos por integrantes**
 
+| Integrante | Dia | Hora
+|:---: | :---: | :---: |
+|Lucciano | Viernes | 3:00 a 5:40 |
+|Lucciano | Martes | 3:00 a 5:40 |
