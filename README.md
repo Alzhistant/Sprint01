@@ -5,6 +5,8 @@
 
 **Horas teoricas:** 320 horas
 
+**Velocidad de sprint:** 6 horas
+
 **Hora para reuniones:**
 
 | Día | Hora |
