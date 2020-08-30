@@ -3,8 +3,8 @@
 
 **Fin del sprint:** 24/09/2020
 
-**Horas teoricas:**
+**Horas teoricas:** 320 horas
 
-**Horas planeadas:**
 
-**Colchon:**
+
+
