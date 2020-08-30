@@ -18,7 +18,7 @@
 
 | Día | Hora inicio | Hora Fin |
 | --- | --- | --- |
-| Martes | 10:00 | 11:00 |
+| Miércoles | 10:00 | 11:00 |
 | Lunes | 17:40 | 18:40 | 
 
 
