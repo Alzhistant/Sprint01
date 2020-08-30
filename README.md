@@ -30,4 +30,4 @@
 | Nicolas | Lunes | 20:00 | 22:00 |
 | Nicolas | Miercoles | 21:00 | 23:00 |
 | Nicolas | Viernes | 20:00 | 22:00 |
-| Dannitt | Lunes - Viernes | 21:00 | 1:00|
+| Dannitt | Lunes - Viernes | 21:00 | 00:00|
