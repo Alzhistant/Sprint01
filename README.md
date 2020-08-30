@@ -4,5 +4,7 @@
 **Fin del sprint:** 24/09/2020
 
 **Horas teoricas:**
+
 **Horas planeadas:**
+
 **Colchon:**
