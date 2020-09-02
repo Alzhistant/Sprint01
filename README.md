@@ -9,7 +9,7 @@
 
 **Colchon:** 189 horas
 
-**Velocidad de sprint:** 8.5 Punto
+**Velocidad de sprint:** 8.5 
 
 **Hora para team meetings:**
 
