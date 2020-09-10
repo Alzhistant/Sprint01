@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Button, View, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { mainStyle } from './styles/styles';
-import TratamientoScreen from './screens/tratamientos';
-import HomeScreen from './screens/home';
-import MapScreen from './screens/mapa';
+import { mainStyle } from './src/styles/styles';
+import TratamientoScreen from './src/screens/tratamientos';
+import HomeScreen from './src/screens/home';
+import MapScreen from './src/screens/mapa';
 
 function DetailsScreen({ navigation }) {
   return (
