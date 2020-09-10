@@ -6,5 +6,8 @@
 
 ## Ejecutar el proyecto:
 - Abrir terminal y ejecutar ```expo start```
+- Abrir proyecto en:
+  - Expo Client en dispositivos iOS o Android
+  - Ejecutar en emulador
 
 
