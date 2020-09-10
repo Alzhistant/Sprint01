@@ -9,5 +9,6 @@
 - Abrir proyecto en:
   - Expo Client en dispositivos iOS o Android
   - Ejecutar en emulador
+  - Ejecutar en Navegador
 
 
