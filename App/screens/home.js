@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { mainStyle } from '../styles/styles';
 
-export default function HomeSreen({ navigation }) {
+export default function HomeScreen({ navigation }) {
     return (
       <View style={mainStyle.container}>
         <TouchableOpacity
