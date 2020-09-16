@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { mainStyle } from '../styles/styles';
+
 
 export default function HomeScreen({ navigation }) {
     return (
@@ -15,6 +16,8 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Mapa')}>
           <Text style={mainStyle.textoBoton}>VER MAPA</Text>
         </TouchableOpacity>
+
+        
       </View>
     );
   }
