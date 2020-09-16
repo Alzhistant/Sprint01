@@ -15,6 +15,11 @@ export default function HomeSreen({ navigation }) {
           onPress={() => navigation.navigate('Mapa')}>
           <Text style={mainStyle.textoBoton}>VER MAPA</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={mainStyle.botonPrimario} 
+          onPress={() => navigation.navigate('Ubicacion')}>
+          <Text style={mainStyle.textoBoton}>VER UBICACION</Text>
+        </TouchableOpacity>
       </View>
     );
   }
