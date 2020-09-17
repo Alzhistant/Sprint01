@@ -4,7 +4,7 @@ export const mainStyle = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: "center",
+        justifyContent: 'center',
         paddingLeft: 60,
         paddingRight: 60,
     },
@@ -51,16 +51,25 @@ export const mainStyle = StyleSheet.create({
     }
 })
 
-export const Boton = StyleSheet.create({
+export const BotonRegister = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        paddingLeft: 60,
+        paddingRight: 60,
+        alignItems: 'center',
       },
       button: {
-        backgroundColor: 'green',
-        width: '40%',
-        height: 40
-      }
+        borderRadius: 5,
+        padding: 15,
+        margin: 5,
+        minWidth: '80%',
+        maxWidth: '80%',
+        alignItems: 'center'
+      },
+      textoBoton: {
+        color: 'black',
+    },
 })
 ;
