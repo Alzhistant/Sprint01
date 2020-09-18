@@ -6,8 +6,8 @@ import { mainStyle } from './styles/styles';
 import TratamientoScreen from './screens/tratamientos';
 import HomeScreen from './screens/home';
 import MapScreen from './screens/mapa';
-import LoginScreen from './screens/login'
-import RegisterScreen from './screens/register'
+import Login from './screens/login'
+import Register from './screens/register'
 
 function DetailsScreen({ navigation }) {
   return (
@@ -29,8 +29,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen name='Login' component={LoginScreen} />
-        <Stack.Screen name='Register' component={RegisterScreen} />
+        <Stack.Screen name='Login' component={Login} />
+        <Stack.Screen name='Register' component={Register} />
         <Stack.Screen name='Home' component={HomeScreen} />
         <Stack.Screen name="Tratamientos" component={TratamientoScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
