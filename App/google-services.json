@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "616447315867",
+    "firebase_url": "https://alzhistant-79e11.firebaseio.com",
+    "project_id": "alzhistant-79e11",
+    "storage_bucket": "alzhistant-79e11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616447315867:android:b29f47cb57b71093599b3e",
+        "android_client_info": {
+          "package_name": "Alzhistant.E"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616447315867-e82s0fambbjlvfdc7h05khh806pqnq7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD21t4U8gAtcc2wgSlfPOxXVV_NACTMluI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616447315867-e82s0fambbjlvfdc7h05khh806pqnq7j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
