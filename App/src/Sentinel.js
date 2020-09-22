@@ -1,16 +1,9 @@
 function SentinelDDCalc(){
-var refC = '45.000 -122.000'; //coordenada de referencia
-var coordP = '45.000 -122.000'; //coordenadas del paciente
+var lat1 = 45.000
+var lon1 = -122.000
 
-//separando latitud y longitud de las coordenadas anteriores
-var arrRef = refC.split(' ');
-var arrP = arrP.split(' ');
-
-var lat1 = parseFloat(arrRef[0]);
-var lon1 = parseFloat(arrRef[1]);
-
-var lat2 = parseFloat(arrP[0]);
-var lon2 = parseFloat(arrP[1]);
+var lat2 = 45.000
+var lon2 = -122.000
 
 var R = 6371e3; // radio de la tierra en metros
 var φ1 = lat1 * Math.PI/180; // cambio de valores (φ, λ) en radianes
@@ -29,4 +22,4 @@ return d;
 }
 
 //si la distancia entre las coordenadas es menor a 500 metros se manda la alerta
-if(SentinelDDCalc()>=500) SendNotification(token,titleNotification,bodyNotification,soundNotification,priorityNotification);
+if(SentinelDDCalc()>=500) SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
