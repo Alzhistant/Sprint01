@@ -1,25 +1,28 @@
-function SentinelDDCalc(){
-var lat1 = 45.000
-var lon1 = -122.000
+function SentinelDDCalc(latP,lonP,latR,lonR,radioM){
+	var lat1 = latP
+	var lon1 = lonP
 
-var lat2 = 45.000
-var lon2 = -122.000
+	var lat2 = latR
+	var lon2 = lonR
 
-var R = 6371e3; // radio de la tierra en metros
-var φ1 = lat1 * Math.PI/180; // cambio de valores (φ, λ) en radianes
-var φ2 = lat2 * Math.PI/180;
-var Δφ = (lat2-lat1) * Math.PI/180;
-var Δλ = (lon2-lon1) * Math.PI/180;
+	var R = 6371e3; // radio de la tierra en metros
+	var fi1 = lat1 * Math.PI/180; // cambio de valores (fi, lambda) en radianes
+	var fi2 = lat2 * Math.PI/180;
+	var Dfi = (lat2-lat1) * Math.PI/180;
+	var Dlam = (lon2-lon1) * Math.PI/180;
 
-var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-          Math.cos(φ1) * Math.cos(φ2) *
-          Math.sin(Δλ/2) * Math.sin(Δλ/2);
-var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+	var a = Math.sin(Dfi/2) * Math.sin(Dfi/2) +
+			  Math.cos(fi1) * Math.cos(fi2) *
+			  Math.sin(Dlam/2) * Math.sin(Dlam/2);
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-var d = R * c; // en metros
-
-return d;
+	var d = R * c; // en metros
+	
+	//si la distancia entre las coordenadas es mayor o igual a radioM se manda la alerta
+	if(d>=radioM){
+		SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
+		return d;
+	}
+	else
+		return d;
 }
-
-//si la distancia entre las coordenadas es menor a 500 metros se manda la alerta
-if(SentinelDDCalc()>=500) SendNotification(Notifier.token,"Paciente fuera de area"," ",'default','high');
