@@ -22,4 +22,4 @@ return d;
 }
 
 //si la distancia entre las coordenadas es menor a 500 metros se manda la alerta
-if(SentinelDDCalc()>=500) SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
+if(SentinelDDCalc()>=500) SendNotification(Notifier.token,"Paciente fuera de area"," ",'default','high');
