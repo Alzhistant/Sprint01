@@ -1,9 +1,39 @@
-function SentinelDDCalc(latP,lonP,latR,lonR,radioM){
-	var lat1 = latP
-	var lon1 = lonP
+import React, {Component} from 'react';
+import {Platform, SyleSheet, Text, View} from 'react-native';
+import MapView from 'react-native-maps';
 
-	var lat2 = latR
-	var lon2 = lonR
+function SentinelDDCalc(latR,lonR){
+	var radioM = 500
+	
+	constructor(props){
+		super(props);
+		
+		this.state = {
+			latitude: 0;
+			longitude: 0;
+		}
+	}
+	
+	componentDidMount(){
+		this.watchId = navigator.geolocation.watchPosition{
+			(position) => {
+				this.setState({
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
+				)};
+			},
+			(error) => {
+				this.setState({ error: error.message })
+			},
+			{ enableHighAccuracy: false, timeout: 1, maximumAge: 1, distanceFilter: 1}
+		}
+	}
+	
+	var lat1 = this.state.latitude;
+	var lon1 = this.state.longitude;
+
+	var lat2 = latR;
+	var lon2 = lonR;
 
 	var R = 6371e3; // radio de la tierra en metros
 	var fi1 = lat1 * Math.PI/180; // cambio de valores (fi, lambda) en radianes
