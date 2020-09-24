@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {Platform, SyleSheet, Text, View} from 'react-native';
 import MapView from 'react-native-maps';
 
-function SentinelDDCalc(latR,lonR){
-	var radioM = 500
+function SentinelDDCalc(latP,lonP){
+	var radioM = 500;
 	
 	constructor(props){
 		super(props);
@@ -29,11 +29,11 @@ function SentinelDDCalc(latR,lonR){
 		}
 	}
 	
-	var lat1 = this.state.latitude;
-	var lon1 = this.state.longitude;
+	var lat1 = latP;
+	var lon1 = lonP;
 
-	var lat2 = latR;
-	var lon2 = lonR;
+	var lat2 = this.state.latitude;
+	var lon2 = this.state.longitude;
 
 	var R = 6371e3; // radio de la tierra en metros
 	var fi1 = lat1 * Math.PI/180; // cambio de valores (fi, lambda) en radianes
