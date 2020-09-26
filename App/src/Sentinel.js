@@ -90,3 +90,29 @@ function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
 	else
 		return d;
 }
+
+const distcoords = "BACKGROUND_TASK"
+
+TaskManager.defineTask(distcoords, () => {
+  try {
+    // fetch data here...
+    const receivedNewData = DistanciaCoordenadas(puntoSeguro, ubicacionPaciente)
+	console.log("My task ", receivedNewData)
+    return receivedNewData
+      ? BackgroundFetch.Result.NewData
+      : BackgroundFetch.Result.NoData
+  } catch (err) {
+    return BackgroundFetch.Result.Failed
+  }
+})
+
+RegisterBackgroundTask = async () => {
+  try {
+    await BackgroundFetch.registerTaskAsync(distcoords, {
+      minimumInterval: 10, // segundos,
+    })
+    console.log("Task registered")
+  } catch (err) {
+    console.log("Task Register failed:", err)
+  }
+}
