@@ -91,11 +91,12 @@ function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
 		return d;
 }
 
+//creacion de tarea de fondo
 const distcoords = "BACKGROUND_TASK"
 
 TaskManager.defineTask(distcoords, () => {
   try {
-    // fetch data here...
+    // data de extracción aquí...
     const receivedNewData = DistanciaCoordenadas(puntoSeguro, ubicacionPaciente)
 	console.log("My task ", receivedNewData)
     return receivedNewData
@@ -108,7 +109,7 @@ TaskManager.defineTask(distcoords, () => {
 
 RegisterBackgroundTask = async () => {
   try {
-    await BackgroundFetch.registerTaskAsync(distcoords, {
+    await BackgroundFetch.istcoorregisterTaskAsync(dds, {
       minimumInterval: 10, // segundos,
     })
     console.log("Task registered")
