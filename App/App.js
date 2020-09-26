@@ -6,6 +6,7 @@ import { mainStyle } from './src/styles/styles';
 import TratamientoScreen from './src/screens/tratamientos';
 import HomeScreen from './src/screens/home';
 import MapScreen from './src/screens/mapa';
+import {DistanciaCoordenadas} from './src/Sentinel';
 
 function DetailsScreen({ navigation }) {
   return (
@@ -24,6 +25,17 @@ function DetailsScreen({ navigation }) {
 const Stack = createStackNavigator();
 
 function App() {
+	const ubicacionPaciente = {
+	  latitude: 46,
+	  longitude: 46,
+	}
+
+	const puntoSeguro = {
+	  longitude: 47,
+	  latitude:47,
+	  distance: 200
+	}
+	console.log(DistanciaCoordenadas(puntoSeguro,ubicacionPaciente));
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Platform, SyleSheet, Text, View} from 'react-native';
 //import MapView from 'react-native-maps';
 import * as BackgroundFetch from 'expo-background-fetch';
+import * as TaskManager from "expo-task-manager";
 
 /*
 function SentinelDDCalc(latP,lonP,latR,lonR,radioM){
@@ -56,8 +57,27 @@ function SentinelDDCalc(latP,lonP,latR,lonR,radioM){
 	else
 		return d;
 }*/
+export class ubicacionPaciente {
+	
+	constructor(longitude,latitude){
+		this.longitude = longitude;
+		this.latitude = latitude;
+	}
+}
 
-function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
+//const ubiP = new ubicacionPaciente(-9.400,-9.400);
+
+export class puntoSeguro{
+	constructor(longitude,latitude,distance){
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.distance = distance;
+	}
+}
+
+//const ubiS = new puntoSeguro(-9.400,-9.400,500);
+
+export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
 	var lat1 = ubicacionPaciente.latitude;
 	//console.log(lat1);
 	var lon1 = ubicacionPaciente.longitude;
@@ -84,7 +104,7 @@ function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
 	//console.log(d);
 	
 	if(d>=puntoSeguro.distance){
-		SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
+		//SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
 		return d;
 	}
 	else
@@ -92,7 +112,7 @@ function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
 }
 
 //creacion de tarea de fondo
-const distcoords = "BACKGROUND_TASK"
+const distcoords = "BACKGROUND_TASK";
 
 TaskManager.defineTask(distcoords, () => {
   try {
