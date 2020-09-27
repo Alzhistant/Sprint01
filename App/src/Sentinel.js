@@ -3,11 +3,27 @@ import {Platform, SyleSheet, Text, View} from 'react-native';
 //import MapView from 'react-native-maps';
 import * as BackgroundFetch from 'expo-background-fetch';
 import * as TaskManager from "expo-task-manager";
+
+import { firebaseApp } from './firebase';
 import firebase from 'firebase/app';
 import "firebase/storage";
 import "firebase/firestore";
 
 const db = firebase.firestore(firebaseApp);
+
+
+let cityRef = db.collection('pacientes').doc('paciente-test');
+let getDoc = cityRef.get()
+  .then(doc => {
+    if (!doc.exists) {
+      console.log('No such document!');
+    } else {
+      console.log('Document data:', doc.data());
+    }
+  })
+  .catch(err => {
+    console.log('Error getting document', err);
+  });
 
 export class ubicacionPaciente {
 	constructor(longitude,latitude){
@@ -29,6 +45,19 @@ export class puntoSeguro{
 //const ubiS = new puntoSeguro(-9.400,-9.400,500);
 
 export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
+	let cityRef = db.collection('pacientes').doc('paciente-test');
+	let getDoc = cityRef.get()
+	.then(doc => {
+    if (!doc.exists) {
+      console.log('No such document!');
+    } else {
+      console.log('Document data:', doc.data());
+    }
+	})
+  .catch(err => {
+    console.log('Error getting document', err);
+  });
+	
 	var lat1 = ubicacionPaciente.latitude;
 	//console.log(lat1);
 	var lon1 = ubicacionPaciente.longitude;
