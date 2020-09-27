@@ -58,7 +58,6 @@ function SentinelDDCalc(latP,lonP,latR,lonR,radioM){
 		return d;
 }*/
 export class ubicacionPaciente {
-	
 	constructor(longitude,latitude){
 		this.longitude = longitude;
 		this.latitude = latitude;
