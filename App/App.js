@@ -7,6 +7,13 @@ import TratamientoScreen from './src/screens/tratamientos';
 import HomeScreen from './src/screens/home';
 import MapScreen from './src/screens/mapa';
 import {DistanciaCoordenadas} from './src/Sentinel';
+import {decode, encode} from 'base-64';
+
+YellowBox.ignoreWarnings(["Setting a timer"]);
+
+if (!global.btoa) {  global.btoa = encode }
+
+if (!global.atob) { global.atob = decode }
 
 function DetailsScreen({ navigation }) {
   return (
