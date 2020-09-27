@@ -51,7 +51,7 @@ export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
     if (!doc.exists) {
       console.log('No such document!');
     } else {
-      console.log('Document data:', doc.data());
+      console.log('Document data:', type(doc.data()));
     }
 	})
   .catch(err => {
