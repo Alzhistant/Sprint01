@@ -11,20 +11,6 @@ import "firebase/firestore";
 
 const db = firebase.firestore(firebaseApp);
 
-
-let cityRef = db.collection('pacientes').doc('paciente-test');
-let getDoc = cityRef.get()
-  .then(doc => {
-    if (!doc.exists) {
-      console.log('No such document!');
-    } else {
-      console.log('Document data:', doc.data());
-    }
-  })
-  .catch(err => {
-    console.log('Error getting document', err);
-  });
-
 export class ubicacionPaciente {
 	constructor(longitude,latitude){
 		this.longitude = longitude;
@@ -51,13 +37,13 @@ export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
     if (!doc.exists) {
       console.log('No such document!');
     } else {
-      console.log('Document data:', type(doc.data()));
+      console.log('Document data:', doc.data());
     }
-	})
+  })
   .catch(err => {
     console.log('Error getting document', err);
   });
-	
+	console.log(cityRef.latitude);
 	var lat1 = ubicacionPaciente.latitude;
 	//console.log(lat1);
 	var lon1 = ubicacionPaciente.longitude;
