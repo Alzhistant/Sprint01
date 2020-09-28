@@ -3,6 +3,7 @@ import {Platform, SyleSheet, Text, View} from 'react-native';
 //import MapView from 'react-native-maps';
 import * as BackgroundFetch from 'expo-background-fetch';
 import * as TaskManager from "expo-task-manager";
+import * as FileSystem from 'expo-file-system';
 
 import { firebaseApp } from './firebase';
 import firebase from 'firebase/app';
@@ -37,13 +38,13 @@ export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
     if (!doc.exists) {
       console.log('No such document!');
     } else {
-      console.log('Document data:', doc.data());
+      console.log(doc.id, " => ", doc.data());
+	  FileSystem.writeAsStringAsync("./firestore", doc.data(), FileSystem.EncodingType.UTF8)
     }
   })
   .catch(err => {
     console.log('Error getting document', err);
-  });
-	console.log(cityRef.latitude);
+  })
 	var lat1 = ubicacionPaciente.latitude;
 	//console.log(lat1);
 	var lon1 = ubicacionPaciente.longitude;
@@ -90,6 +91,7 @@ TaskManager.defineTask(distcoords, () => {
       : BackgroundFetch.Result.NoData
   } catch (err) {
     return BackgroundFetch.Result.Failed
+	console.log("error");
   }
 })
 
