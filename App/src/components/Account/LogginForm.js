@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
-import { Input, Icon, Button } from "react-native-elements";
-import { isEmpty } from "lodash";
-import { useNavigation } from "@react-navigation/native";
-import * as firebase from "firebase";
-import { validateEmail } from "../../utils/validations";
-import Loading from "../Loading";
-import Navigation from "../../navigation/Navigation";
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Input, Icon, Button } from 'react-native-elements';
+import { isEmpty } from 'lodash';
+import { useNavigation } from '@react-navigation/native';
+import * as firebase from 'firebase';
+import { validateEmail } from '../../utils/validations';
+import Loading from '../Loading';
+import Navigation from '../../navigation/Navigation';
 
 export default function LoginForm(props) {
   const { toastRef } = props;
@@ -21,9 +21,9 @@ export default function LoginForm(props) {
 
   const onSubmit = () => {
     if (isEmpty(formData.email) || isEmpty(formData.password)) {
-      toastRef.current.show("Todos los campos son obligatorios");
+      toastRef.current.show('Todos los campos son obligatorios');
     } else if (!validateEmail(formData.email)) {
-      toastRef.current.show("El email no es correcto");
+      toastRef.current.show('El email no es correcto');
     } else {
       setLoading(true);
       firebase
@@ -35,7 +35,7 @@ export default function LoginForm(props) {
         })
         .catch(() => {
           setLoading(false);
-          toastRef.current.show("Email o contraseña incorrecta");
+          toastRef.current.show('Email o contraseña incorrecta');
         });
     }
   };
@@ -43,69 +43,69 @@ export default function LoginForm(props) {
   return (
     <View style={styles.formContainer}>
       <Input
-        placeholder="Correo electronico"
+        placeholder='Correo electronico'
         containerStyle={styles.inputForm}
-        onChange={(e) => onChange(e, "email")}
+        onChange={(e) => onChange(e, 'email')}
         rightIcon={
           <Icon
-            type="material-community"
-            name="at"
+            type='material-community'
+            name='at'
             iconStyle={styles.iconRight}
           />
         }
       />
       <Input
-        placeholder="Contraseña"
+        placeholder='Contraseña'
         containerStyle={styles.inputForm}
         password={true}
         secureTextEntry={showPassword ? false : true}
-        onChange={(e) => onChange(e, "password")}
+        onChange={(e) => onChange(e, 'password')}
         rightIcon={
           <Icon
-            type="material-community"
-            name={showPassword ? "eye-off-outline" : "eye-outline"}
+            type='material-community'
+            name={showPassword ? 'eye-off-outline' : 'eye-outline'}
             iconStyle={styles.iconRight}
             onPress={() => setShowPassword(!showPassword)}
           />
         }
       />
       <Button
-        title="Iniciar sesión"
+        title='Iniciar sesión'
         containerStyle={styles.btnContainerLogin}
         buttonStyle={styles.btnLogin}
         onPress={onSubmit}
       />
-      <Loading isVisible={loading} text="Iniciando sesión" />
+      <Loading isVisible={loading} text='Iniciando sesión' />
     </View>
   );
 }
 
 function defaultFormValue() {
   return {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   };
 }
 
 const styles = StyleSheet.create({
   formContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 30,
   },
   inputForm: {
-    width: "100%",
+    width: '100%',
     marginTop: 20,
   },
   btnContainerLogin: {
     marginTop: 20,
-    width: "95%",
+    width: '95%',
   },
   btnLogin: {
-    backgroundColor: "#00a680",
+    backgroundColor: '#00a680',
   },
   iconRight: {
-    color: "#c1c1c1",
+    color: '#c1c1c1',
   },
 });
