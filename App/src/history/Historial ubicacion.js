@@ -8,7 +8,10 @@ lonP; //==>'74245'; ----Ejemplo de pruebas
 //time= new Date(); ----Seguir investigando
 
   
-function capturarCoordenada(){
+
+
+
+export function capturarCoordenada(){
   
     function coordenada(longitud,latitud,tiempo){
         this.longitud=longitud;
@@ -16,15 +19,15 @@ function capturarCoordenada(){
         this.tiempo=tiempo;
     }
 
-var longitudCapturar=latP; 
-var latitudCapturar=lonP;
-//var tiempoCapturar=document.write(time.getHours());
+    var longitudCapturar=latP; 
+    var latitudCapturar=lonP;
+    //var tiempoCapturar=document.write(time.getHours());
 
   
-coordenadaGuardada=new coordenada(longitudCapturar,latitudCapturar,tiempoCapturar);
-console.log(coordenadaGuardada);
+    coordenadaGuardada=new coordenada(longitudCapturar,latitudCapturar,tiempoCapturar);
+    console.log(coordenadaGuardada);
   
-insertar();
+    insertar();
 
 }
 
