@@ -45,7 +45,7 @@ function CreateAccount() {
 
 const styles = StyleSheet.create({
   logo: {
-    width: "100%",
+    width: '100%',
     height: 150,
     marginTop: 20,
   },
@@ -59,11 +59,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   btnRegister: {
-    color: "#00a680",
-    fontWeight: "bold",
+    color: '#00a680',
+    fontWeight: 'bold',
   },
   divider: {
-    backgroundColor: "#00a680",
+    backgroundColor: '#00a680',
     margin: 40,
   },
 });
