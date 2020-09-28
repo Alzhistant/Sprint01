@@ -1,20 +1,10 @@
-import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { mainStyle } from '../styles/styles';
+import React from 'react'
+import { View, Text } from 'react-native'
 
-export default function HomeSreen({ navigation }) {
+export default function Home() {
     return (
-      <View style={mainStyle.container}>
-        <TouchableOpacity
-          style={mainStyle.botonPrimario} 
-          onPress={() => navigation.navigate('Tratamientos')}>
-          <Text style={mainStyle.textoBoton}>TRATAMIENTOS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={mainStyle.botonPrimario} 
-          onPress={() => navigation.navigate('Mapa')}>
-          <Text style={mainStyle.textoBoton}>VER MAPA</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+        <View>
+            <Text>Home...</Text>
+        </View>
+    )
+}
