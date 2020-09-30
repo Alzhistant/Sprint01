@@ -33,16 +33,10 @@ const Stack = createStackNavigator();
 
 function App() {
 	const ubicacionPaciente = {
-	  latitude: 46,
-	  longitude: 46,
+	  latitude: -32.879734, 
+	  longitude: -71.257562,
 	}
-
-	const puntoSeguro = {
-	  longitude: 47,
-	  latitude:47,
-	  distance: 200
-	}
-	console.log(DistanciaCoordenadas(puntoSeguro,ubicacionPaciente));
+	console.log("----- \n", DistanciaCoordenadas(ubicacionPaciente));
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">

@@ -3,7 +3,7 @@ import {Platform, SyleSheet, Text, View} from 'react-native';
 //import MapView from 'react-native-maps';
 import * as BackgroundFetch from 'expo-background-fetch';
 import * as TaskManager from "expo-task-manager";
-import * as FileSystem from 'expo-file-system';
+//import * as FileSystem from 'expo-file-system';
 
 import { firebaseApp } from './firebase';
 import firebase from 'firebase/app';
@@ -19,63 +19,58 @@ export class ubicacionPaciente {
 	}
 }
 
-//const ubiP = new ubicacionPaciente(-9.400,-9.400);
-
-export class puntoSeguro{
+/*export class puntoSeguro{
 	constructor(longitude,latitude,distance){
 		this.longitude = longitude;
 		this.latitude = latitude;
 		this.distance = distance;
 	}
-}
+}*/
 
-//const ubiS = new puntoSeguro(-9.400,-9.400,500);
 
-export function DistanciaCoordenadas(puntoSeguro, ubicacionPaciente){
+
+export function DistanciaCoordenadas(ubicacionPaciente){
 	let cityRef = db.collection('pacientes').doc('paciente-test');
 	let getDoc = cityRef.get()
 	.then(doc => {
     if (!doc.exists) {
       console.log('No such document!');
     } else {
-      console.log(doc.id, " => ", doc.data());
-	  FileSystem.writeAsStringAsync("./firestore", doc.data(), FileSystem.EncodingType.UTF8)
-    }
-  })
-  .catch(err => {
-    console.log('Error getting document', err);
-  })
-	var lat1 = ubicacionPaciente.latitude;
-	//console.log(lat1);
-	var lon1 = ubicacionPaciente.longitude;
-	//console.log(lon1);
+      //console.log(doc.id, " => ", doc.data());
+		var lat1 = ubicacionPaciente.latitude;
+		var lon1 = ubicacionPaciente.longitude;
+		//console.log("Posicion central Paciente: ", lat1,",", lon1);
 
-	var lat2 = puntoSeguro.latitude;
-	//console.log(lat2);
-	var lon2 = puntoSeguro.longitude;
-	//console.log(lon2);
+		var lat2 = doc.data().safeArea.latitude;
+		var lon2 = doc.data().safeArea.longitude;
+		//console.log("Posicion central Area Segura: ", lat2,",", lon2);
 
-	var R = 6371e3; // radio de la tierra en metros
-	var fi1 = lat1 * Math.PI/180; // cambio de valores (fi, lambda) en radianes
-	var fi2 = lat2 * Math.PI/180;
-	var Dfi = (lat2-lat1) * Math.PI/180;
-	var Dlam = (lon2-lon1) * Math.PI/180;
+		var R = 6371e3; // radio de la tierra en metros
+		var fi1 = lat1 * Math.PI/180; // cambio de valores (fi, lambda) en radianes
+		var fi2 = lat2 * Math.PI/180;
+		var Dfi = (lat2-lat1) * Math.PI/180;
+		var Dlam = (lon2-lon1) * Math.PI/180;
 
-	var a = Math.sin(Dfi/2) * Math.sin(Dfi/2) +
-			  Math.cos(fi1) * Math.cos(fi2) *
-			  Math.sin(Dlam/2) * Math.sin(Dlam/2);
-	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		var a = Math.sin(Dfi/2) * Math.sin(Dfi/2) +
+				  Math.cos(fi1) * Math.cos(fi2) *
+				  Math.sin(Dlam/2) * Math.sin(Dlam/2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-	var d = R * c; // en metros
-	
-	//console.log(d);
-	
-	if(d>=puntoSeguro.distance){
-		//SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
-		return d;
-	}
-	else
-		return d;
+		var d = R * c; // en metros
+		
+		//console.log("Distancia: ", d);
+		
+		if(d>=doc.data().safeArea.distance){
+			//SendNotification(expoPushToken,"Paciente fuera de area"," ",'default','high');
+			return d;
+		}
+		else
+			return d;
+		}
+	})
+	.catch(err => {
+		console.log('Error getting document', err);
+	})
 }
 
 //creacion de tarea de fondo
